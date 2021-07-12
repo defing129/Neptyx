@@ -1,10 +1,10 @@
-import { Text } from 'react-native';
+
 import React from "react";
 import styled from "styled-components/native";
 import LogoWrapper from '../components/layouts/LogoWrapper.js';
 import Button from '../components/common/Button.js';
 import GestureRecognizer from "react-native-swipe-gestures";
-
+import Text from '../components/Text/Text'
 
 
 
@@ -27,14 +27,20 @@ export default function Introduction(props) {
             </TopWrapper>
             <CenterWrapper>
                 <ImageWrapper>
-                    <Image width='260px' height='280px' source={require('../../assets/image/utils/art_ico_screen3.png')}/>
+                    <Image width='250px' height='270px' source={require('../../assets/image/utils/art_ico_screen3.png')}/>
                 </ImageWrapper>
             </CenterWrapper>
             <BottomWrapper>
                 <InfoTextWrapper>
-                    <InfoText>
-                    Большая база{"\n"}для рассылок битов
-                    </InfoText>
+
+                    <Text
+                        text={'Большая база для  рассылок битов'}
+                        color={'white'}
+                        fontSize={'36px'}
+                        fontWeight={700}
+                        lineHeight={'45px'}
+                        textAlign={'left'}
+                    />
                 </InfoTextWrapper>
             </BottomWrapper>
         </Background>
@@ -52,13 +58,14 @@ const CenterWrapper = styled.View`
     flex: 3;
 `
 const BottomWrapper = styled.View`
-    flex: 2;
+    flex: 1;
+    margin-top: 200;
 `
 
 const ImageWrapper = styled.View`
     align-items: center;
     justify-content: center;
-    margin-top: 30px;
+    margin-top: 25px;
  
 `
 const Image = styled.Image`
@@ -66,17 +73,7 @@ const Image = styled.Image`
     height: ${props => props.height || '302px'}; 
 `
 const InfoTextWrapper = styled.View`
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    padding: 50px 20px;
-`
-const InfoText = styled.Text`
-    text-align: left;
-    font-weight: bold;
-    font-size: 34px;
-    color: white;
-    line-height: 40px;
-    left: 8px;
+ bottom: 30px;
+    padding-left: 30px;
+    
 `

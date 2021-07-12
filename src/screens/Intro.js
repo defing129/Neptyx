@@ -15,7 +15,7 @@ export default function Intro(props)  {
             <Container>
                 <LogoWrapper/>
                 <ButtonWrapper>
-                    <Button icon='true' text='Войти    |' navigation={props.navigation} />
+                    <Button icon='true' text='Войти      |' navigation={props.navigation} />
                 </ButtonWrapper>
             </Container>
         </Background>

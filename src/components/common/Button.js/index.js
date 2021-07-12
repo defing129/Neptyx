@@ -30,8 +30,8 @@ const MainButton = styled.TouchableOpacity`
 
 const TextButton = styled.Text`
         color:  ${props => props.color || 'black'};
-        font-weight: bold;
-        font-size: 20px;
+        font-weight: 700;
+        font-size: 18px;
         line-height: 27px;
         display: flex;
         align-items: center;
@@ -39,6 +39,7 @@ const TextButton = styled.Text`
         margin-left: 16px;
 `
 const IconButton = styled.Image`
-    margin-top: 2px;
+    margin-top: 3px;
     margin-left: 10px;
+    
 `

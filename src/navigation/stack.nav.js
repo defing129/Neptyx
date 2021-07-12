@@ -72,6 +72,7 @@ const StackNavigation = (props) => (
                          }}
         >
             <Stack.Screen name="AuthStack" component={AuthStack} options={{}}
+
             />
 
         </Stack.Navigator>

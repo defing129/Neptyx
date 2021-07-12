@@ -1,8 +1,8 @@
-import { Text } from 'react-native';
 import React from "react";
 import styled from "styled-components/native";
 import LogoWrapper from '../components/layouts/LogoWrapper.js';
-import Button from '../components/common/Button.js';
+import Text from "../components/Text/Text";
+
 
 
 
@@ -20,12 +20,25 @@ export default function Preloader( ) {
             </CenterWrapper>
             <BottomWrapper>
                 <InfoTextWrapper>
-                    <InfoText>
-                        Полностью
-                    </InfoText>
-                    <InText>
-                        Бесплатно
-                    </InText>
+                    <Text
+                        text={'Полностью'}
+                        color={'white'}
+                        fontSize={'36px'}
+                        fontWeight={700}
+                        lineHeight={'45px'}
+                        textAlign={'left'}
+                        left={'15'}
+                    />
+                    <InfoText1>
+                        <Text
+                            text={'Бесплатно'}
+                            color={'white'}
+                            fontSize={'36px'}
+                            fontWeight={700}
+                            lineHeight={'45px'}
+                            textAlign={'left'}
+                        />
+                    </InfoText1>
                 </InfoTextWrapper>
             </BottomWrapper>
         </Background>
@@ -45,10 +58,6 @@ const BottomWrapper = styled.View`
     flex: 2;
 `
 
-const ButtonWrapper = styled.View`
-    align-items: center;
-    justify-content: center;
-`
 const ImageWrapper = styled.View`
     align-items: center;
     justify-content: center;
@@ -59,31 +68,18 @@ const Image = styled.Image`
     height: ${props => props.height || '302px'}; 
 `
 const InfoTextWrapper = styled.View`
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    padding: 50px 20px;
+    bottom: 30px;
+    padding-left: 25px;
+    padding-top: 110px;
+    
 `
-const InfoText = styled.Text`
-    text-align: left;
-    font-weight: bold;
-    font-size: 40px;
-    color: white;
-    line-height: 40px;
-    padding-left: 10;
-`
-const InText = styled.Text`
-    text-align: left;
-    font-weight: bold;
-    font-size: 40px;
-    color: white;
-    line-height: 40px;
+const InfoText1 = styled.View`
+ 
+    justify-content: center;
     background: #48D6A3;
     border-radius: 5px;
     width: 65%;
-    padding-left: 10;
-    padding-top: 10;
     border-radius: 5px;
-    padding-right: 10;
+    padding-left: 15px;
+    top: 5px;
 `

@@ -16,4 +16,6 @@ export default function Container( { children } ) {
 const ContainerApp = styled.View`
     flex: 1;
     paddingHorizontal: 20px;
+    top: 20px;
 `
+''

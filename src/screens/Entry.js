@@ -1,10 +1,9 @@
-import { Text } from 'react-native';
 import React from "react";
 import styled from "styled-components/native";
 import LogoWrapper from '../components/layouts/LogoWrapper.js';
 import Button from '../components/common/Button.js';
 import GestureRecognizer from "react-native-swipe-gestures";
-
+import Text from '../components/Text/Text'
 
 
 
@@ -29,28 +28,46 @@ export default function Entry(props) {
                 <LogoWrapper width='36px' height='43px'/>
             </TopWrapper>
             <BtnWrapper onPress={() => props.navigation.navigate('Introduct')}>
-                <Text1>
-                    Пропустить
-                </Text1>
+
+                <Text
+                    text={'Пропустить'}
+                    color={'rgba(255, 255, 255, 0.32);'}
+                    fontSize={'19px'}
+                    fontWeight={500}
+                    lineHeight={'19px'}
+
+                />
             </BtnWrapper>
             <CenterWrapper>
                 <ImageWrapper>
-                    <Image width='350px' height='360px' source={require('../../assets/image/utils/art_ico_screen2.png')}/>
+                    <Image width='320px' height='330px' source={require('../../assets/image/utils/art_ico_screen2.png')}/>
                 </ImageWrapper>
             </CenterWrapper>
             <SwipeWrapper>
-                <SwipeText>
-                    Свайпни вниз
-                </SwipeText>
+                <Text
+                    text={'Свайпни вниз'}
+                    color={'white'}
+                    fontSize={'19px'}
+                    fontWeight={500}
+                    lineHeight={'26px'}
+                    textAlign={'center'}
+                    top={'160px'}
+                />
             </SwipeWrapper>
             <IcoWrapper>
-                <Image1 width='12px' height='16px' source={require('../../assets/image/utils/Swipe_ico.png')} />
+                <Image1 width='15px' height='21px' source={require('../../assets/image/utils/Swipe_ico.png')} />
             </IcoWrapper>
             <BottomWrapper>
                 <InfoTextWrapper>
-                    <InfoText>
-                  Рассылайте биты{'\n'}исполнителям
-                    </InfoText>
+
+                    <Text
+                        text={'Рассылайте биты исполнителям'}
+                        color={'white'}
+                        fontSize={'36px'}
+                        fontWeight={700}
+                        lineHeight={'45px'}
+                        textAlign={'left'}
+                    />
                 </InfoTextWrapper>
             </BottomWrapper>
 
@@ -71,22 +88,13 @@ const BtnWrapper = styled.TouchableOpacity`
     align-items: center;
     justify-content: center;
     color: white;
-    height: 46;
-    top: 30;
+    height: 46px;
+    top: 50px;
     width: 55%;
     border: 1px solid rgba(255, 255, 255, 0.22);
-border-radius: 5px;    
+    border-radius: 5px;    
 `
 
-
-const Text1 = styled.Text`
-    text-align: left;
-    font-weight: 500;
-    font-size: 19px;
-    color: rgba(255, 255, 255, 0.32);
-    line-height: 19px;
-  
-`
 const CenterWrapper = styled.View`
     flex: 3;
     top: 70px;
@@ -94,28 +102,20 @@ const CenterWrapper = styled.View`
 const ImageWrapper = styled.View`
     align-items: center;
     justify-content: center;
+    top: 20px;
 
 `
 const SwipeWrapper = styled.View`
-
-
-`
-const SwipeText = styled.Text`
-    text-align: center;
-    font-weight: 500;
-    font-size: 19px;
-    color: white;
-    line-height: 26px;
-    top: 160px ;
-
+    top:155px;
 
 `
+
 
 
 const IcoWrapper = styled.View`
     align-items: center;
     justify-content: center;
-    top: 165px ;
+    top: 161px ;
 `
 const Image1 = styled.Image`
     width: ${props => props.width || '292.51px'};
@@ -135,18 +135,11 @@ const BottomWrapper = styled.View`
 
 `
 const InfoTextWrapper = styled.View`
-    bottom: 30;
+    bottom: 30px;
+    padding-left: 30px;
    
 
 
 `
-const InfoText = styled.Text`
-    text-align: left;
-    font-weight: 700;
-    font-size: 38px;
-    color: white;
-    line-height: 45px;
-    top: 15px ;
 
-`
 

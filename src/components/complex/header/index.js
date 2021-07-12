@@ -8,26 +8,35 @@ export default function CustomHeader( ) {
         <Header>
             <Container>
                 <IconHeader
-                    source = {require('../../../../assets/image/utils/logo.png')}/>
-
+                    source = {require('../../../../assets/image/utils/logo_header.png')}/>
+                <CountHeader>
+                    💎 300
+                </CountHeader>
             </Container>
         </Header>
     );
 }
 
-const Header = styled.View`
+const Header = styled.View` 
    align-items: center;
    justify-content: center;
     height: 100px;
-    padding-top: 40;
+    padding-top: 40px;
     margin-bottom: 17px;
 `
 const IconHeader = styled.Image`
-    width: 70px;  
-    height: 90px;
-   
+
+ width: 100px;
+ height: 19px;
+ right: 120px;
+ top: 2px;
 `
 const CountHeader = styled.Text`
+    top: 15px;
     color: white;
-     text-align: center;
+    right: 120px;
+     text-align: left;
+     font-weight: 600;
+font-size: 21px;
 `
+
