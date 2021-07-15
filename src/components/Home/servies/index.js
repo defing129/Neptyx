@@ -8,7 +8,7 @@ export  default function ServHeader () {
         <Background>
             <SeHeader>
                 <ServText>
-                    Услуги
+
                 </ServText>
                 <ServText2>
                    Услуги которые предоставляют учасники
