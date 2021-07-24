@@ -2,7 +2,6 @@
 import React from "react";
 import styled from "styled-components/native";
 import LogoWrapper from '../components/layouts/LogoWrapper.js';
-import Button from '../components/common/Button.js';
 import GestureRecognizer from "react-native-swipe-gestures";
 import Text from '../components/Text/Text'
 
@@ -12,7 +11,6 @@ export default function Introduction(props) {
 
     return (
         <GestureRecognizer
-
             onSwipeUp={(state) => {
                 console.log('tut')
                 props.navigation.navigate('PreloadScreen')

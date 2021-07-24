@@ -3,9 +3,13 @@ import { createStackNavigator} from '@react-navigation/stack';
 import styled from "styled-components/native";
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { NavigationContainer, DefaultTheme} from '@react-navigation/native';
-import {Preloader, Home, Intro, Introduction, Entry, History, Profile, Bits} from "../screens";
-
-
+import {Preloader, Home, Intro, Introduction, Entry, History, Profile, Bits, SubjectBits, Fans} from "../screens";
+import ArrowIcon from "../../assets/Svg/Tabs/ArrowIcon";
+import ArrowIcon2 from "../../assets/Svg/Tabs/ArrowIcon2";
+import ArrowIcon3 from "../../assets/Svg/Tabs/ArrowIcon3";
+import ArrowIcon4 from "../../assets/Svg/Tabs/ArrowIcon4";
+import ArrowIcon5 from "../../assets/Svg/Tabs/ArrowIcon5";
+import {TouchableOpacity} from "react-native";
 
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -35,7 +39,7 @@ function AuthStack() {
         >
             <Stack.Screen
                 name="HomeScreen"
-                component={Home}
+                component={Intro}
                 options={{
                     gestureEnabled: false
                 }}
@@ -65,7 +69,8 @@ function AuthStack() {
     );
 }
 
- function BottomTabs({}) {
+
+ function BottomTabs({navigation}) {
     return (
         <Tab.Navigator
             initialRouteName={'Dashboard'}
@@ -99,12 +104,10 @@ function AuthStack() {
                 name=" "
                 component={Home}
                 options={{
+
                     tabBarLabel: "",
-                    tabBarIcon: ( {color}) => (
-                        <Image
-                            source={require("../../assets/image/utils/Vector_(5).png")}
-                            style={{ width: 26, height: 26 }}
-                        />
+                    tabBarIcon: () => (
+                        <ArrowIcon color={'white'} />
                     )
                 }}
             />
@@ -114,24 +117,30 @@ function AuthStack() {
                 options={{
                     tabBarLabel: "",
                     tabBarIcon: ( ) => (
-                        <Image
-                            source={require("../../assets/image/utils/Ellipse_(3).png")}
-                            style={{ width: 66, height: 86 }}
-                        />
+                        <TouchableOpacity onPress={() => navigation.navigate('HistoryBottomTabs')} style={{width: 120, height: 55, alignItems: "center", justifyContent: 'center'}} >
+                        <ArrowIcon2 />
+                        </TouchableOpacity>
                     )
                 }}
             />
             <Tab.Screen
                 name="   "
                 component={Home}
+
                 options={{
                     tabBarLabel: "",
-                    tabBarIcon: ( ) => (
-                        <Image
-                            source={require("../../assets/image/utils/Profile_(3).png")}
-                            style={{ width: 26, height: 26 }}
+                    tabBarIcon: ({focused}) => (
+                        <TouchableOpacity onPress={()=> navigation.navigate('ProfileBottomTabs')} style={{width: 120, height: 55, alignItems: "center", justifyContent: 'center'}} >
+                            <ArrowIcon3
+                                resizeMode='contain'
+                                style={{
+                                    width: 25,
+                                    height: 25,
+                                    tintColor: focused ? '#e32f45' : '#748c94'
+                            }}
+                            />
 
-                        />
+                        </TouchableOpacity>
                     )
                 }}
             />
@@ -141,12 +150,9 @@ function AuthStack() {
     );
 }
 
-const Image = styled.Image `
- 
-`
 
 
-function HistoryBottomTabs () {
+function HistoryBottomTabs ({navigation}) {
     return (
         <Tab.Navigator
             initialRouteName={'History'}
@@ -172,32 +178,28 @@ function HistoryBottomTabs () {
                     elevation: 0,
                     borderTopWidth: 0
                 }
-
             }}
             shifting={false}
         >
             <Tab.Screen
-                name=" "
+                name="  "
                 component={History}
                 options={{
-                    tabBarLabel: "",
-                    tabBarIcon: ( {color}) => (
-                        <Image
-                            source={require("../../assets/image/utils/Ellipse_(1).png")}
-                            style={{ width: 66, height: 86, color: 'white' }}
-                        />
+                    tabBarLabel: "  ",
+                    tabBarIcon: () => (
+                        <TouchableOpacity onPress={() => navigation.navigate('BottomTabs')} style={{width: 120, height: 55, alignItems: "center", justifyContent: 'center'}}>
+                      <ArrowIcon4 color={'white'} />
+                        </TouchableOpacity>
                     )
                 }}
             />
         </Tab.Navigator>
     );
-
-
 }
-function BitsBottomTabs () {
+function BitsBottomTabs ({navigation}) {
     return (
         <Tab.Navigator
-            initialRouteName={'Bits'}
+            initialRouteName={'Profile'}
             activeColor="#616D78"
             inactiveColor="rgba(97, 109, 120, 0.6)"
 
@@ -211,7 +213,7 @@ function BitsBottomTabs () {
                     height: 50
                 },
                 labelStyle: {
-                    fontSize: 13
+                    fontSize: 13,
                 },
                 style: {
                     height: 86,
@@ -225,35 +227,36 @@ function BitsBottomTabs () {
             shifting={false}
         >
             <Tab.Screen
-                name=" "
+                name="  "
                 component={Bits}
                 options={{
-                    tabBarLabel: "",
-                    tabBarIcon: ({}) => (
-                        <Image
-                            source={require("../../assets/image/utils/Ellipse_(1).png")}
-                            style={{ width: 66, height: 86, left: 97 }}
-                        />
+                    tabBarLabel: "  ",
+                    tabBarIcon: ( {} ) => (
+                        <TouchableOpacity onPress={() => navigation.navigate('BottomTabs' ) } style={{width: 120, height: 55, alignItems: "center", justifyContent: 'center',marginLeft : 200}} >
+                            <ArrowIcon4 color={'white'}  />
+                        </TouchableOpacity>
                     )
                 }}
             />
             <Tab.Screen
-                name="   "
+                name=" "
                 component={Bits}
                 options={{
-                    tabBarLabel: "  ",
-                    tabBarIcon: ({}) => (
-                        <Image
-                            source={require("../../assets/image/utils/Ellipse_(2).png")}
-                            style={{ width: 26, height: 26, left: 55 }}
-                        />
+
+                    tabBarLabel: " ",
+                    tabBarIcon: ( ) => (
+                        <TouchableOpacity style={{left: 40}} >
+                            <ArrowIcon5 color={'white'} />
+                        </TouchableOpacity>
                     )
                 }}
             />
+
+
         </Tab.Navigator>
     );
 }
-function ProfileBottomTabs({}) {
+function ProfileBottomTabs({navigation}) {
     return (
         <Tab.Navigator
             initialRouteName={'Profile'}
@@ -289,10 +292,9 @@ function ProfileBottomTabs({}) {
                 options={{
                     tabBarLabel: "  ",
                     tabBarIcon: ( {}) => (
-                        <Image
-                            source={require("../../assets/image/utils/Vector_(5).png")}
-                            style={{ width: 26, height: 26 }}
-                        />
+                        <TouchableOpacity onPress={() => navigation.navigate('BottomTabs')} style={{width: 120, height: 55, alignItems: "center", justifyContent: 'center'}}>
+                        <ArrowIcon />
+                        </TouchableOpacity>
                     )
                 }}
             />
@@ -302,10 +304,9 @@ function ProfileBottomTabs({}) {
                 options={{
                     tabBarLabel: " ",
                     tabBarIcon: ( ) => (
-                        <Image
-                            source={require("../../assets/image/utils/Ellipse_(3).png")}
-                            style={{ width: 66, height: 86 }}
-                        />
+                        <TouchableOpacity onPress={() => navigation.navigate('FansBottomTabs')} style={{width: 120, height: 55, alignItems: "center", justifyContent: 'center'}}>
+                        <ArrowIcon2 />
+                        </TouchableOpacity>
                     )
                 }}
             />
@@ -315,11 +316,8 @@ function ProfileBottomTabs({}) {
                 options={{
                     tabBarLabel: "   ",
                     tabBarIcon: ( ) => (
-                        <Image
-                            source={require("../../assets/image/utils/Profile_(3).png")}
-                            style={{ width: 26, height: 26 }}
-
-                        />
+                       <ArrowIcon3 color={'white'}
+                       />
                     )
                 }}
             />
@@ -328,7 +326,96 @@ function ProfileBottomTabs({}) {
         </Tab.Navigator>
     );
 }
+function SubjectBottomTabs({navigation}) {
+    return (
+        <Tab.Navigator
+            initialRouteName={'SubjectBits'}
+            activeColor="#616D78"
+            inactiveColor="rgba(97, 109, 120, 0.6)"
 
+            tabBarOptions={{
+                showIcon: true,
+                activeTintColor: '#283933',
+                inactiveTintColor: '#BCC3CC',
+
+                tabStyle: {
+                    marginTop: 13,
+                    height: 50
+                },
+                labelStyle: {
+                    fontSize: 13
+                },
+                style: {
+                    height: 86,
+                    bottom: 0,
+                    opacity: .5,
+                    elevation: 0,
+                    borderTopWidth: 0
+                }
+
+            }}
+            shifting={false}
+        >
+            <Tab.Screen
+                name="  "
+                component={SubjectBits}
+                options={{
+                    tabBarLabel: "  ",
+                    tabBarIcon: ( {}) => (
+                        <TouchableOpacity  onPress={() => navigation.navigate(BottomTabs)} style={{width: 120, height: 55, alignItems: "center", justifyContent: 'center'}}>
+                       <ArrowIcon4 color={'white'} />
+                        </TouchableOpacity>
+                    )
+                }}
+            />
+        </Tab.Navigator>
+    );
+}
+
+function FansBottomTabs ({navigation}) {
+    return (
+        <Tab.Navigator
+            initialRouteName={'Fans'}
+            activeColor="#616D78"
+            inactiveColor="rgba(97, 109, 120, 0.6)"
+
+            tabBarOptions={{
+                showIcon: true,
+                activeTintColor: '#283933',
+                inactiveTintColor: '#BCC3CC',
+
+                tabStyle: {
+                    marginTop: 13,
+                    height: 50
+                },
+                labelStyle: {
+                    fontSize: 13
+                },
+                style: {
+                    height: 86,
+                    bottom: 0,
+                    opacity: .5,
+                    elevation: 0,
+                    borderTopWidth: 0
+                }
+            }}
+            shifting={false}
+        >
+            <Tab.Screen
+                name="  "
+                component={Fans}
+                options={{
+                    tabBarLabel: "  ",
+                    tabBarIcon: () => (
+                        <TouchableOpacity onPress={() => navigation.navigate('ProfileBottomTabs')} style={{width: 120, height: 55, alignItems: "center", justifyContent: 'center'}}>
+                            <ArrowIcon4 color={'white'} />
+                        </TouchableOpacity>
+                    )
+                }}
+            />
+        </Tab.Navigator>
+    );
+}
 
 
 
@@ -342,10 +429,13 @@ const StackNavigation = (props) => (
                              gestureEnabled: false
                          }}
         >
-            {/*<Stack.Screen name="AuthStack" component={AuthStack} options={{}}*/}
-            <Stack.Screen name="MainStack" component={ProfileBottomTabs} options={{}}
-
-            />
+            <Stack.Screen name="AuthStack" component={AuthStack} options={{}} />
+       <Stack.Screen name="BottomTabs" component={BottomTabs} options={{}}/>
+       <Stack.Screen name="HistoryBottomTabs" component={HistoryBottomTabs} options={{}}/>
+       <Stack.Screen name="BitsBottomTabs" component={BitsBottomTabs} options={{}}/>
+       <Stack.Screen name="ProfileBottomTabs" component={ProfileBottomTabs} options={{}}/>
+       <Stack.Screen name="SubjectBottomTabs" component={SubjectBottomTabs} options={{}}/>
+       <Stack.Screen name="FansBottomTabs" component={FansBottomTabs} options={{}}/>
 
         </Stack.Navigator>
     </NavigationContainer>

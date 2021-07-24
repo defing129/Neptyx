@@ -6,3 +6,5 @@ export { default as Entry } from './Entry'  //
 export { default as History } from './History'  //
 export { default as Bits} from './Bits'  //
 export { default as Profile} from './Profile'  //
+export { default as SubjectBits} from './SubjectBits'  //
+export { default as Fans} from './Fans'  //

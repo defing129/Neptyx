@@ -18,4 +18,3 @@ const ContainerApp = styled.View`
     paddingHorizontal: 20px;
     top: 20px;
 `
-''

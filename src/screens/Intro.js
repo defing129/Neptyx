@@ -1,4 +1,4 @@
-import React , {Component} from "react";
+import React  from "react";
 import styled from "styled-components/native";
 import Container from "../components/layouts/Container";
 import Button from '../components/common/Button.js';
@@ -15,7 +15,8 @@ export default function Intro(props)  {
             <Container>
                 <LogoWrapper/>
                 <ButtonWrapper>
-                    <Button icon='true' text='Войти      |' navigation={props.navigation} />
+                    <Button  text={'    Войти    |'} icon='true' navigation={props.navigation} />
+
                 </ButtonWrapper>
             </Container>
         </Background>
@@ -30,11 +31,10 @@ const ButtonWrapper = styled.View`
     width: 100%;
     align-items: center;
     justify-content: center;
-    margin-top: 160px;
+    margin-top: 130px;
     text-align: center;
     margin-left: 9px;
     font-size: 20px;
     font-weight: 800;
-    
+   
 `
-

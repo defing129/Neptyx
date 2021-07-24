@@ -2,13 +2,24 @@ import React from "react";
 import styled from "styled-components/native";
 import LogoWrapper from '../components/layouts/LogoWrapper.js';
 import Text from "../components/Text/Text";
+import GestureRecognizer from "react-native-swipe-gestures";
 
 
 
 
 
-export default function Preloader( ) {
+export default function Preloader(props) {
     return (
+        <GestureRecognizer
+
+            onSwipeUp={(state) => {
+                console.log('tut')
+                props.navigation.navigate('BottomTabs')
+            }}
+            style={{
+                flex: 1,
+            }}
+        >
         <Background source = {require('../../assets/image/bd/bg4.png')}>
             <TopWrapper>
                 <LogoWrapper width='36px' height='43px'/>
@@ -42,6 +53,7 @@ export default function Preloader( ) {
                 </InfoTextWrapper>
             </BottomWrapper>
         </Background>
+        </GestureRecognizer>
     )}
 
 const Background = styled.ImageBackground`
@@ -61,20 +73,20 @@ const BottomWrapper = styled.View`
 const ImageWrapper = styled.View`
     align-items: center;
     justify-content: center;
- 
+
 `
 const Image = styled.Image`
-    width: ${props => props.width || '292.51px'}; 
-    height: ${props => props.height || '302px'}; 
+    width: ${props => props.width || '292.51px'};
+    height: ${props => props.height || '302px'};
 `
 const InfoTextWrapper = styled.View`
     bottom: 30px;
     padding-left: 25px;
     padding-top: 110px;
-    
+
 `
 const InfoText1 = styled.View`
- 
+
     justify-content: center;
     background: #48D6A3;
     border-radius: 5px;

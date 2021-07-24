@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "styled-components/native";
 import LogoWrapper from '../components/layouts/LogoWrapper.js';
-import Button from '../components/common/Button.js';
 import GestureRecognizer from "react-native-swipe-gestures";
 import Text from '../components/Text/Text'
 
@@ -51,7 +50,6 @@ export default function Entry(props) {
                     fontWeight={500}
                     lineHeight={'26px'}
                     textAlign={'center'}
-                    top={'160px'}
                 />
             </SwipeWrapper>
             <IcoWrapper>

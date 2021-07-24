@@ -3,10 +3,14 @@ import styled from "styled-components/native";
 import Button from "../common/Button.js";
 
 
-export default function Text({color, text, fontSize ,fontWeight,lineHeight,textAlign,left,top,  navigation}) {
+export default function Text({color, text, fontSize ,fontWeight,lineHeight,textAlign,left,top,icon, navigation}) {
 
     return (
-            <TitleText color={color}  fontSize={fontSize} fontWeight={fontWeight} left={left} top={top}  lineHeight={lineHeight} textAlign={textAlign}>{text}</TitleText>
+            <TitleText color={color}  icon={icon} fontSize={fontSize} fontWeight={fontWeight} left={left} top={top} lineHeight={lineHeight} textAlign={textAlign}>
+                {text}
+                {icon && <IconButton source={require('../../../assets/image/utils/Vector_(Stroke).png')}/>}
+
+            </TitleText>
 
     )
 }
@@ -24,4 +28,6 @@ const TitleText = styled.Text`
     left:  ${props => props.left || '0'} ;
     top:  ${props => props.top || '0'} ;
     text-align: ${props => props.textAlign || 'center' };
+`
+const IconButton = styled.Image`
 `
