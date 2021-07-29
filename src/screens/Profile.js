@@ -6,6 +6,7 @@ import ProfileHeader from "../components/Profile";
 import Form from "../components/Form/Form";
 import {Image, ScrollView,StyleSheet, TouchableOpacity, View, Modal} from "react-native";
 import ImageIcon6 from "../../assets/Svg/ImageIcon6";
+import ImageIcon from "../../assets/Svg/ImageIcon";
 
 export default function Profile() {
     const [prf] = useState([
@@ -48,16 +49,9 @@ export default function Profile() {
                         textAlign={'left'}
                     />
                 </TextWrapper>
+
                 <IconWrapper>
-                    <WrapperIc>
-                        <Text
-                            text={'ⓘ'}
-                            color={'rgba(72, 72, 72, 0.84)'}
-                            textAlign={''}
-                            top={'8px'}
-                            left={'174px'}
-                        />
-                    </WrapperIc>
+
                     <Text
                         text={'💎 300 ' }
                         fontSize={'21px'}
@@ -67,10 +61,11 @@ export default function Profile() {
                     />
 
                 </IconWrapper>
+
                 <Form/>
                 <WrapperImage>
-                    <Image source={require('../../assets/image/utils/image_2.png')} />
-                    <Wrapper2Image>
+                    <Image style={{height:  100, marginTop: 11}} source={require('../../assets/image/utils/image_2.png')} />
+                    <Wrapper2Image >
                     <Image source={require('../../assets/image/utils/Vector_(20).png')} />
                     </Wrapper2Image>
                 </WrapperImage>
@@ -206,7 +201,7 @@ const Background = styled.ImageBackground`
 const ProfileWrapper = styled.TouchableOpacity`
     align-items: center;
     justify-content: center;
-    bottom: 38px;
+    bottom: 16px;
     background-color:  #47935C;
     padding-top: 8px;
     padding-bottom: 8px;
@@ -250,10 +245,8 @@ const Wrapper2Image = styled.TouchableOpacity `
    bottom: 70px;
    width: 31%;
 `
-const WrapperIc = styled.TouchableOpacity `
-   background: red;
-   flex: 0;
-`
+
+
 const EndWrapper = styled.View `
     align-items: center;
     justify-content: center;
@@ -286,3 +279,4 @@ const BackMod = styled.View`
  flex: 0.3;
  border-radius: 5px;
 `
+

@@ -84,9 +84,9 @@ export default function Form({}) {
                             <FormEmail  />
                             <InviteHeader>
                                 <Text
-                                    text={'Привязать'}
+                                    text={'Привязять'}
                                     color={'white'}
-                                    fontSize={'13px'}
+                                    fontSize={'12px'}
                                     fontWeight={600}
                                     lineHeight={'19px'}
                                 />
@@ -171,10 +171,10 @@ const InviteHeader = styled.TouchableOpacity `
     justify-content: center;
     margin-top: 25px;
     margin-left: 30px;
-    height: 40px;
+    height: 42px;
     width: 93%;
-    padding-left: 115px;
-    padding-right: 115px;
+    padding-left: 116px;
+    padding-right: 116px;
     border-radius: 5px;
 `
 const TouchableIcon = styled.TouchableOpacity `

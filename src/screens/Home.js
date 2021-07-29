@@ -4,7 +4,6 @@ import styled from "styled-components/native";
 import CustomHeader from "../components/complex/header/index";
 import Text from "../components/Text/Text";
 import {Image, TouchableOpacity, View, ScrollView, Modal, StyleSheet} from "react-native";
-import ImageIcon from "../../assets/Svg/ImageIcon";
 import ImageIcon8 from "../../assets/Svg/ImageIcon8";
 import ImageIcon6 from "../../assets/Svg/ImageIcon6";
 

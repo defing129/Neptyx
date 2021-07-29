@@ -139,9 +139,7 @@ export default function History( ) {
                                     />
 
                                 </View>
-
                         </WrapperModal>
-
                     </View>
                 </View>
             </Modal>

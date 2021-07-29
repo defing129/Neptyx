@@ -185,16 +185,17 @@ export default function SubjectBits() {
                             <View style={{paddingLeft: 150, paddingTop: 60}}>
                             <ImageIcon7 />
                             </View>
+                            <View style={{ marginTop: 25, alignItems: "center", justifyContent: "center"}}>
                             <Text
+
                                 text={'Рассылка отправлена'}
                                 color={'#47935C'}
                                 fontSize={'16px'}
                                 fontWeight={800}
                                 lineHeight={'24px'}
                                 left={'13px'}
-                                top={'21px'}
                             />
-
+                            </View>
                         </WrapperModal>
                     </View>
                 </View>
@@ -253,7 +254,7 @@ const ForeignWrapper = styled.TouchableOpacity`
     width: 28%;
     border: 1px solid rgba(255, 255, 255, 0.22);
     border-radius: 5px; 
-    margin-left: 150px;   
+    margin-left: 158px;   
 `
 const IndWrapper = styled.TouchableOpacity`
     align-items: center;
@@ -262,7 +263,7 @@ const IndWrapper = styled.TouchableOpacity`
     width: 28%;
     border: 1px solid rgba(255, 255, 255, 0.22);
     border-radius: 5px;    
-    left: 265px;
+    left: 282px;
     bottom: 66px;
 `
 
@@ -305,7 +306,7 @@ const KickWrapper = styled.TouchableOpacity`
     height: 38px;
     align-items: center;
     justify-content: center;
-    margin-left: 151px;
+    margin-left: 159px;
     bottom: 126px;
 `
 const Kick2Wrapper = styled.TouchableOpacity`
@@ -315,7 +316,7 @@ const Kick2Wrapper = styled.TouchableOpacity`
     height: 38px;
     align-items: center;
     justify-content: center;
-    margin-left: 151px;
+    margin-left: 159px;
     bottom: 116px;
 `
 
@@ -326,7 +327,7 @@ const RapWrapper = styled.TouchableOpacity`
     height: 38px;
     align-items: center;
     justify-content: center;
-    margin-left: 267px;
+    margin-left: 283px;
     bottom: 202px;
 `
 const EndWrapper = styled.TouchableOpacity`
@@ -336,7 +337,7 @@ const EndWrapper = styled.TouchableOpacity`
     height: 38px;
     align-items: center;
     justify-content: center;
-    margin-left: 267px;
+    margin-left: 283px;
     bottom: 192px;
 `
 const MailingWrapper = styled.View`

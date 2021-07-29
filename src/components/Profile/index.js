@@ -1,13 +1,13 @@
 import React from "react";
 import styled from "styled-components/native";
 import Container from "../../components/layouts/Container"
+import ImageIcon9 from "../../../assets/Svg/ImageIcon9";
 
 export default function ProfileHeader( ) {
     return (
         <Header>
             <Container>
-                <IconHeader
-                    source = {require('../../../assets/image/utils/logo_header.png')}/>
+                <ImageIcon9 />
              </Container>
         </Header>
     );

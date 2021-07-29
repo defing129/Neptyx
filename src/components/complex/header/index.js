@@ -2,16 +2,18 @@ import React from "react";
 import styled from "styled-components/native";
 import Container from "../../layouts/Container"
 import Text from '../../Text/Text'
+import ImageIcon9 from "../../../../assets/Svg/ImageIcon9";
 
-export default function CustomHeader( ) {
+export default function CustomHeader() {
     return (
         <Header>
             <Container>
-                <IconHeader
-                    source = {require('../../../../assets/image/utils/logo_header.png')}/>
+                <IconHeader>
+                    <ImageIcon9/>
+                </IconHeader>
                 <CountHeader>
                     <Text
-                      text={'💎 300'}
+                        text={'💎 300'}
                     />
 
                 </CountHeader>
@@ -29,7 +31,7 @@ const Header = styled.View`
     margin-bottom: 17px;
     margin-left: 10px;
 `
-const IconHeader = styled.Image`
+const IconHeader = styled.View`
     width: 100px;
     height: 19px;
     right: 120px;

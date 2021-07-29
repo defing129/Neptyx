@@ -1,6 +1,6 @@
 import React from 'react';
 import { createStackNavigator} from '@react-navigation/stack';
-import styled from "styled-components/native";
+
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { NavigationContainer, DefaultTheme} from '@react-navigation/native';
 import {Preloader, Home, Intro, Introduction, Entry, History, Profile, Bits, SubjectBits, Fans} from "../screens";
@@ -60,7 +60,7 @@ function AuthStack() {
             />
             <Stack.Screen
                 name="PreloadScreen"
-                component={Preloader}
+                component={Preloader}учуe
                 options={{
                     gestureEnabled: false
                 }}
